@@ -1,0 +1,4 @@
+---
+# handlers for serf
+- name: restart serf
+  service: name=serf state=restarted
