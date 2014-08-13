@@ -11,6 +11,7 @@ Role Variables
 --------------
 - version
 - sha256sum
+- consul\_enabled
 
 Dependencies
 ------------

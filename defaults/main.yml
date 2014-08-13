@@ -2,3 +2,5 @@
 # default vars for serf
 version: 0.6.3
 sha256sum: 320a7811809210e91d4603c74e526fc34d5a59b06e913b68f45d92bd82a46800
+consul_enabled: false
+

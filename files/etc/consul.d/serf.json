@@ -1,0 +1,11 @@
+{
+  "service": {
+    "name": "serf",
+    "tags": ["serf"],
+    "port": 7373,
+    "check": {
+      "script": "/usr/local/bin/serf info >/dev/null 2>&1",
+      "interval": "5s"
+    }
+  }
+}
