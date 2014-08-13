@@ -1,4 +1,4 @@
-consul
+serf
 =========
 Ansible role for [serf](http://www.serfdom.io/).
 This role ensures that serf runs as a daemon.
