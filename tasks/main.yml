@@ -28,5 +28,3 @@
 
 - copy: src=./etc/consul.d/serf.json dest=/etc/consul.d/serf.json owner=serf group=serf mode=0644
   when: consul_enabled
-  notify:
-    - restart consul
