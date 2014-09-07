@@ -27,3 +27,4 @@
   when: consul_enabled
 
 - service: name=serf state=started enabled=yes
+  when: daemon_enabled
