@@ -10,7 +10,7 @@
     mode: 0644
     sha256sum: "{{ sha256sum }}"
 
-- command: unzip -o /tmp/{{ version }}_linux_amd64.zip chdir=/usr/local/bin
+- unarchive: src=/tmp/{{ version }}_linux_amd64.zip dest=/usr/local/bin copy=no
 
 - file: path=/usr/local/bin/serf owner=serf group=serf mode=0755 state=file
 
