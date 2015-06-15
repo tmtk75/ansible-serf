@@ -16,8 +16,6 @@
 
 - file: path=/etc/serf.d owner=serf group=serf mode=0755 state=directory
 
-- copy: src=./etc/init.d/serf dest=/etc/init.d/serf owner=serf group=serf mode=0755
-
 - template: src=./etc/serf.conf dest=/etc/serf.conf owner=serf group=serf mode=0644
 
 - file: path=/etc/consul.d mode=0755 state=directory
@@ -25,6 +23,9 @@
 
 - copy: src=./etc/consul.d/serf.json dest=/etc/consul.d/serf.json owner=serf group=serf mode=0644
   when: consul_enabled
+
+- copy: src=./etc/init.d/serf dest=/etc/init.d/serf owner=serf group=serf mode=0755
+  when: daemon_enabled
 
 - service: name=serf state=started enabled=yes
   when: daemon_enabled
