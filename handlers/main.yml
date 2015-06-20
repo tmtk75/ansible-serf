@@ -1,2 +1,8 @@
 ---
-# handlers for serf
+- name: Remove temp files
+  file: path={{ item }} state=absent
+  with_items:
+    - /tmp/serf
+    - /tmp/{{ version }}_linux_amd64.zip
+  delegate_to: localhost
+  ignore_errors: yes

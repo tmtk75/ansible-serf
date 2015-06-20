@@ -9,8 +9,13 @@
     dest: /tmp
     mode: 0644
     sha256sum: "{{ sha256sum }}"
+  delegate_to: localhost
 
-- command: unzip -o /tmp/{{ version }}_linux_amd64.zip chdir=/usr/local/bin
+- unarchive: src=/tmp/{{ version }}_linux_amd64.zip dest=/tmp
+  delegate_to: localhost
+  notify: Remove temp files
+
+- copy: src=/tmp/serf dest=/usr/local/bin/serf owner=serf group=serf mode=0755
 
 - file: path=/usr/local/bin/serf owner=serf group=serf mode=0755 state=file
 
